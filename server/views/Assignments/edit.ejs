@@ -1,24 +1,44 @@
-<%- include ('../partials/header') %>
-<%- include ('../partials/main_nav') %>
-<h2>Edit Assignment</h2>
-<form method="POST" action="/assignments/edit/<%= assignment._id %>">
-  <div>
-    <label>Assignment Title: <input name="assignmentTitle" value="<%= assignment.assignmentTitle %>" required /></label>
+<%- include('../partials/header') %>
+<%- include('../partials/main_nav') %>
+<div class="container">
+  <div class="row">
+    <div class="offset-md-3 col-md-6">
+      <h1><%= title || "Edit Assignment" %></h1>
+      <form class="form" method="post" action="/assignments/edit/<%= assignment._id %>">
+        <div class="form-group">
+          <label for="assignmentTitleField">Assignment Title</label>
+          <input type="text" class="form-control" id="assignmentTitleField"
+                 name="assignmentTitle" value="<%= assignment.assignmentTitle %>" required>
+        </div>
+        <div class="form-group">
+          <label for="classField">Class</label>
+          <input type="text" class="form-control" id="classField"
+                 name="class" value="<%= assignment.class %>" required>
+        </div>
+        <div class="form-group">
+          <label for="projectExplanationField">Project Explanation</label>
+          <textarea class="form-control" id="projectExplanationField"
+                    name="projectExplanation" rows="3" required><%= assignment.projectExplanation %></textarea>
+        </div>
+        <div class="form-group">
+          <label for="projectMembersField">Project Members (comma separated)</label>
+          <input type="text" class="form-control" id="projectMembersField"
+                 name="projectMembers" value="<%= assignment.projectMembers.join(', ') %>" required>
+        </div>
+        <div class="form-group">
+          <label for="yearOfCompletionField">Year of Completion</label>
+          <input type="number" class="form-control" id="yearOfCompletionField"
+                 name="yearOfCompletion" value="<%= assignment.yearOfCompletion %>" required>
+        </div>
+        <br>
+        <button class="btn btn-primary" type="submit">
+          <i class="fas fa-edit"></i> Submit
+        </button>
+        <a href="/assignments" class="btn btn-warning">
+          <i class="fas fa-undo"></i> Cancel
+        </a>
+      </form>
+    </div>
   </div>
-  <div>
-    <label>Class: <input name="class" value="<%= assignment.class %>" required /></label>
-  </div>
-  <div>
-    <label>Project Explanation:<br>
-      <textarea name="projectExplanation" required><%= assignment.projectExplanation %></textarea>
-    </label>
-  </div>
-  <div>
-    <label>Project Members (comma separated): <input name="projectMembers" value="<%= assignment.projectMembers.join(', ') %>" required /></label>
-  </div>
-  <div>
-    <label>Year of Completion: <input name="yearOfCompletion" type="number" value="<%= assignment.yearOfCompletion %>" required /></label>
-  </div>
-  <button type="submit">Save Changes</button>
-</form>
-<%- include ('../partials/footer') %>
+</div>
+<%- include('../partials/footer') %>

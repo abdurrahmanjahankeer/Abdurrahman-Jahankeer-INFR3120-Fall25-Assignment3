@@ -1,33 +1,41 @@
-<nav class="navbar navbar-expand-lg navbar-dark">
-    <div class="container-fluid">
-    <a class="navbar-brand d-flex align-items-center" href="/">
-      <img src="/Asset/images/AJ-web-pic.png" alt="AJ Web Pic" height="50" class="me-2">
-      <span>ADA Type Writer</span>
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#232425;">
+  <div class="container-fluid">
+    <a class="navbar-brand d-flex align-items-center fw-bold" href="/">
+      Abdurrahman Jahankeer
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarNav" aria-controls="navbarNav"
+            aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
         <li class="nav-item">
-          <% if(title==="Typing Records") { %>
-            <a class="nav-link active" href="/Assignments"><i class="fa-solid fa-lg fa-list"></i> Assignments</a>
+          <% if(typeof title !== 'undefined' && title === "Home") { %>
+            <a class="nav-link active" href="/"><i class="fas fa-home"></i> Home</a>
           <% } else { %>
-            <a class="nav-link" href="/Assignments"><i class="fa-solid fa-lg fa-list"></i> Assignments</a>
+            <a class="nav-link" href="/"><i class="fas fa-home"></i> Home</a>
           <% } %>
         </li>
         <li class="nav-item">
-          <% if(title=="About") { %>
-            <a class="nav-link active" aria-current="page" href="/about"><i class="fa-solid fa-lg fa-circle-info"></i> About</a>
+          <% if(typeof title !== 'undefined' && title === "About") { %>
+            <a class="nav-link active" href="/about"><i class="fas fa-circle-info"></i> About</a>
           <% } else { %>
-            <a class="nav-link" aria-current="page" href="/about"><i class="fa-solid fa-lg fa-circle-info"></i> About</a>
+            <a class="nav-link" href="/about"><i class="fas fa-circle-info"></i> About</a>
           <% } %>
         </li>
         <li class="nav-item">
-          <% if(title=="Contact") { %>
-            <a class="nav-link active" aria-current="page" href="/contact"><i class="fa-solid fa-lg fa-phone"></i> Contact</a>
+          <% if(typeof title !== 'undefined' && title === "Assignments" || title === "Assignments") { %>
+            <a class="nav-link active" href="/assignments"><i class="fas fa-file-alt"></i> Assignments</a>
           <% } else { %>
-            <a class="nav-link" aria-current="page" href="/contact"><i class="fa-solid fa-lg fa-phone"></i> Contact</a>
+            <a class="nav-link" href="/assignments"><i class="fas fa-file-alt"></i> Assignments</a>
+          <% } %>
+        </li>
+        <li class="nav-item">
+          <% if(typeof title !== 'undefined' && title === "Contact") { %>
+            <a class="nav-link active" href="/contact"><i class="fas fa-phone"></i> Contact</a>
+          <% } else { %>
+            <a class="nav-link" href="/contact"><i class="fas fa-phone"></i> Contact</a>
           <% } %>
         </li>
       </ul>

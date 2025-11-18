@@ -1,6 +1,47 @@
 <%- include('partials/header') %>
 <%- include('partials/main_nav') %>
 
+<!-- Main About Me Page Container -->
+<div class="container-fluid py-4" style="min-height: 90vh;">
+  <div class="row justify-content-center">
+    <div class="col-md-8 text-center">
 
+      <!-- Page Title -->
+      <h1 class="mb-4 text-white">About Me</h1>
+
+      <!-- Profile Image Block -->
+      <div style="display:inline-block; margin-bottom:20px;">
+        <div style="border:4px solid #fff; display:inline-block;">
+          <img src="/Asset/images/AJ-web-pic.png" alt="Abdurrahman Jahankeer" class="img-fluid rounded" style="width: 260px; height: 300px; object-fit:cover;">
+          <div style="background:#ffa600; color:#fff; font-weight:600; padding:7px 0;">
+            Abdurrahmaan Jahankeer<br>(January 2025)
+          </div>
+        </div>
+      </div>
+
+      <!-- Intro / Description -->
+      <div class="mt-4 mb-4">
+        <h4 class="text-white">Hey, I am a 19 year old <span style="color: orange;">Cybersecurity</span> student at Ontario Tech University.</h4>
+      </div>
+
+      <!-- Video Section Like Screenshot -->
+      <div class="mb-4 d-flex justify-content-center" style="min-width: 320px;">
+        <div style="border: 5px solid #fff; padding: 0.5em;">
+          <video controls poster="/Asset/images/AJ-about-me-poster.png" style="max-width: 600px; width:100%;">
+            <source src="/Asset/videos/AJ-about-me.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+
+      <!-- Games Row Just Like Screenshot -->
+      <div class="mt-3 mb-2">
+        <p class="text-white fs-5">
+          Games: <span style="color:#fff">Minecraft, Rocket League, Fortnite, Roblox, Rainbow Six Siege, Call of Duty, Clash of Clans, Clash Royale, DragonCity, etc.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
 
 <%- include('partials/footer') %>

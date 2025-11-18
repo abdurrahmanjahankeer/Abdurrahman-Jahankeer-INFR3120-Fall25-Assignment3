@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+    <a class="navbar-brand d-flex align-items-center" href="/">
+      <img src="/Asset/images/AJ-web-pic.png" alt="AJ Web Pic" height="50" class="me-2">
+      <span>ADA Type Writer</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <% if(title==="Typing Records") { %>
+            <a class="nav-link active" href="/Assignments"><i class="fa-solid fa-lg fa-list"></i> Assignments</a>
+          <% } else { %>
+            <a class="nav-link" href="/Assignments"><i class="fa-solid fa-lg fa-list"></i> Assignments</a>
+          <% } %>
+        </li>
+        <li class="nav-item">
+          <% if(title=="About") { %>
+            <a class="nav-link active" aria-current="page" href="/about"><i class="fa-solid fa-lg fa-circle-info"></i> About</a>
+          <% } else { %>
+            <a class="nav-link" aria-current="page" href="/about"><i class="fa-solid fa-lg fa-circle-info"></i> About</a>
+          <% } %>
+        </li>
+        <li class="nav-item">
+          <% if(title=="Contact") { %>
+            <a class="nav-link active" aria-current="page" href="/contact"><i class="fa-solid fa-lg fa-phone"></i> Contact</a>
+          <% } else { %>
+            <a class="nav-link" aria-current="page" href="/contact"><i class="fa-solid fa-lg fa-phone"></i> Contact</a>
+          <% } %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,6 +1,7 @@
 {
   "name": "abdurrahman-jahankeer-infr3120-fall25-assignment3",
   "version": "0.0.0",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js"

@@ -73,10 +73,9 @@ router.post('/edit/:id', async (req, res) => {
 // Delete assignment
 router.get('/delete/:id', async (req, res) => {
   try {
-    await Assignment.findByIdAndRemove(req.params.id);
+    await Assignment.findByIdAndDelete(req.params.id);
     res.redirect('/assignments');
   } catch (err) {
-    // FIXED: pass title to error view
     res.status(400).render('error', { message: "Error deleting assignment: " + err.message, error: err, title: "Error" });
   }
 });

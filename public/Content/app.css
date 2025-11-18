@@ -14,7 +14,7 @@ body {
 /* Page wrapper leaves space for footer, keeps footer at bottom */
 #page-wrapper {
     min-height: 600px;
-    padding-bottom: 120px; 
+    padding-bottom: 30px; 
 }
 
 /* Titles */

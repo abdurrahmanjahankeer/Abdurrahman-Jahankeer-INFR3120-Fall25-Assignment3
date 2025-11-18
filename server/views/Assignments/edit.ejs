@@ -1,0 +1,23 @@
+<%- include('../partials/header') %>
+<h2>Edit Assignment</h2>
+<form method="POST" action="/assignments/edit/<%= assignment._id %>">
+  <div>
+    <label>Assignment Title: <input name="assignmentTitle" value="<%= assignment.assignmentTitle %>" required /></label>
+  </div>
+  <div>
+    <label>Class: <input name="class" value="<%= assignment.class %>" required /></label>
+  </div>
+  <div>
+    <label>Project Explanation:<br>
+      <textarea name="projectExplanation" required><%= assignment.projectExplanation %></textarea>
+    </label>
+  </div>
+  <div>
+    <label>Project Members (comma separated): <input name="projectMembers" value="<%= assignment.projectMembers.join(', ') %>" required /></label>
+  </div>
+  <div>
+    <label>Year of Completion: <input name="yearOfCompletion" type="number" value="<%= assignment.yearOfCompletion %>" required /></label>
+  </div>
+  <button type="submit">Save Changes</button>
+</form>
+<%- include('../partials/footer') %>

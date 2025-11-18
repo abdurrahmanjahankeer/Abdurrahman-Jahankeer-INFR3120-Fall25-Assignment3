@@ -41,13 +41,13 @@
               <td><%= assignments[i].yearOfCompletion %></td>
               <td>
                 <%# This button lets you edit a single assignment %>
-                <a href="/assignments/edit/<%= assignments[i]._id %>" class="btn btn-primary btn-sm">
+                <a href="/assignments/edit/<%= assignments[i]._id %>" class="edit-btn">
                   <i class="fas fa-pencil-alt"></i>
                 </a>
               </td>
               <td>
                 <%# This button lets you delete a single assignment %>
-                <a href="/assignments/delete/<%= assignments[i]._id %>" class="btn btn-danger btn-sm"
+                <a href="/assignments/delete/<%= assignments[i]._id %>" class="delete-btn"
                     <%# This button checks if you really want to delete the assignment. It's like a confirmation message %>
                     onclick="return confirm('Are you sure you want to delete this assignment?');">
                     <i class="fas fa-trash-alt"></i>

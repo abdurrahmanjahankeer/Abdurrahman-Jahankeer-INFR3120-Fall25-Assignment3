@@ -205,3 +205,29 @@ footer a:hover {
   background-color: orange;
   color: white;
 }
+/* Assignment Table: Make Edit and Delete buttons equal height and style */
+.edit-btn,
+.delete-btn {
+    height: 43px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin: 0;
+    font-size: 22px;
+    border-radius: 8px;
+    background-color: rgb(25, 118, 210);
+    color: white;
+    border: none;
+}
+.delete-btn {
+    background-color: rgb(229, 57, 53);
+}
+.edit-btn:hover {
+    background-color: rgb(255, 166, 0);
+    color: white;
+}
+.delete-btn:hover {
+    background-color: orange;
+    color: white;
+}

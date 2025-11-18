@@ -1,44 +1,48 @@
 <%- include('../partials/header') %>
 <%- include('../partials/main_nav') %>
-<div class="container">
-  <div class="row">
-    <div class="offset-md-3 col-md-6">
-      <h1><%= title || "Add Assignment" %></h1>
-      <form class="form" method="post" action="/assignments/add">
-        <div class="form-group">
-          <label for="assignmentTitleField">Assignment Title</label>
-          <input type="text" class="form-control" id="assignmentTitleField"
-                 name="assignmentTitle" placeholder="Enter assignment title" required>
+
+<div id="page-wrapper">
+    <div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+        <h1><%= title || "Add Assignment" %></h1>
+        <form class="form" method="post" action="/assignments/add">
+            <div class="form-group">
+            <label for="assignmentTitleField">Assignment Title</label>
+            <input type="text" class="form-control" id="assignmentTitleField"
+                    name="assignmentTitle" placeholder="Enter assignment title" required>
+            </div>
+            <div class="form-group">
+            <label for="classField">Class</label>
+            <input type="text" class="form-control" id="classField"
+                    name="class" placeholder="Enter class name" required>
+            </div>
+            <div class="form-group">
+            <label for="projectExplanationField">Project Explanation</label>
+            <textarea class="form-control" id="projectExplanationField"
+                        name="projectExplanation" rows="3" placeholder="Describe the project" required></textarea>
+            </div>
+            <div class="form-group">
+            <label for="projectMembersField">Project Members (comma separated)</label>
+            <input type="text" class="form-control" id="projectMembersField"
+                    name="projectMembers" placeholder="e.g. Jane Doe, John Doe" required>
+            </div>
+            <div class="form-group">
+            <label for="yearOfCompletionField">Year of Completion</label>
+            <input type="number" class="form-control" id="yearOfCompletionField"
+                    name="yearOfCompletion" placeholder="e.g. 2025" required>
+            </div>
+            <br>
+            <button class="btn btn-primary" type="submit">
+            <i class="fas fa-edit"></i> Submit
+            </button>
+            <a href="/assignments" class="btn btn-warning">
+            <i class="fas fa-undo"></i> Cancel
+            </a>
+        </form>
         </div>
-        <div class="form-group">
-          <label for="classField">Class</label>
-          <input type="text" class="form-control" id="classField"
-                 name="class" placeholder="Enter class name" required>
-        </div>
-        <div class="form-group">
-          <label for="projectExplanationField">Project Explanation</label>
-          <textarea class="form-control" id="projectExplanationField"
-                    name="projectExplanation" rows="3" placeholder="Describe the project" required></textarea>
-        </div>
-        <div class="form-group">
-          <label for="projectMembersField">Project Members (comma separated)</label>
-          <input type="text" class="form-control" id="projectMembersField"
-                 name="projectMembers" placeholder="e.g. Jane Doe, John Doe" required>
-        </div>
-        <div class="form-group">
-          <label for="yearOfCompletionField">Year of Completion</label>
-          <input type="number" class="form-control" id="yearOfCompletionField"
-                 name="yearOfCompletion" placeholder="e.g. 2025" required>
-        </div>
-        <br>
-        <button class="btn btn-primary" type="submit">
-          <i class="fas fa-edit"></i> Submit
-        </button>
-        <a href="/assignments" class="btn btn-warning">
-          <i class="fas fa-undo"></i> Cancel
-        </a>
-      </form>
     </div>
-  </div>
+    </div>
 </div>
+
 <%- include('../partials/footer') %>

@@ -1,0 +1,23 @@
+/* Mobile View Stylesheet */
+body {
+    font-size: 15px;
+    padding: 0 10px;
+}
+.homepage-title, .page-title, h1, h2 {
+    font-size: 22px;
+}
+.navbar-brand {
+    font-size: 18px;
+}
+.table td, .table th {
+    font-size: 13px;
+    padding: 7px 3px;
+}
+.form-group label, .form-control {
+    font-size: 13px;
+}
+
+footer {
+    font-size: 12px;
+    padding: 17px 0 8px 0;
+}

@@ -1,8 +1,207 @@
+/* Main Stylesheet for Assignment Portfolio */
+
+/* Base background and body font */
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(180deg, rgb(10, 10, 40) 0%, rgb(15, 76, 129) 100%);
+    color: white;
+    min-height: 100%;
+    font-size: 18px;
 }
 
-a {
-  color: #00B7FF;
+/* Page wrapper leaves space for footer, keeps footer at bottom */
+#page-wrapper {
+    min-height: 600px;
+    padding-bottom: 120px; 
+}
+
+/* Titles */
+.homepage-title, .page-title, h1, h2 {
+    color: white;
+    font-size: 36px;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.homepage-content p {
+    text-align: center;
+}
+
+/* Buttons */
+.btn-primary {
+    background: linear-gradient(90deg, rgb(15,76,129) 60%, orange 100%);
+    color: white;
+    border: none;
+    font-size: 20px;
+    padding: 10px 30px;
+    border-radius: 12px;
+}
+.btn-primary:hover {
+    background: orange;
+    color: white;
+}
+.btn-warning {
+    background-color: rgb(50,50,50);
+    color: white;
+    border: none;
+    border-radius: 9px;
+    padding: 8px 24px;
+    font-size: 18px;
+}
+.btn-outline-info {
+    border: 2px solid rgb(15,76,129);
+    color: rgb(15,76,129);
+    background: transparent;
+    border-radius: 10px;
+    padding: 8px 22px;
+    font-size: 16px;
+}
+.btn-outline-info:hover {
+    background: rgb(15,76,129);
+    color: white;
+}
+
+/* Assignments Table */
+.table {
+    width: 100%;
+    background: rgb(12,17,55);
+    color: white;
+    border-spacing: 0;
+    border-radius: 20px;
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 18px;
+    border: 2px solid rgb(20,20,60);
+}
+.table th, .table td {
+    padding: 11px 7px;
+    border: 2px solid rgb(20,20,60);
+}
+.table th {
+    background: rgb(10,10,40);
+    color: orange;
+}
+.table-hover tr:hover {
+    background-color: rgb(25,25,60);
+}
+
+/* Table columns for edit/delete actions */
+.table tr td:last-child, .table tr td:nth-last-child(2) {
+    background: rgb(30,30,60);
+}
+
+/* Form input and group styles */
+.form-control {
+    background-color: white;
+    color: rgb(10,10,40);
+    border: 2px solid orange;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-bottom: 14px;
+    padding: 8px 15px;
+    width: 100%;
+}
+.form-group label {
+    color: rgb(190,190,200);
+    font-size: 18px;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+/* Navbar */
+.navbar-brand {
+    font-size: 26px;
+    font-weight: bold;
+    color: orange;
+    letter-spacing: 1px;
+}
+.navbar {
+    background: linear-gradient(90deg, rgb(10,10,40) 60%, rgb(15,76,129) 100%);
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.nav-link {
+    font-size: 17px;
+    margin: 0 7px;
+    padding: 8px 18px;
+    border-radius: 5px;
+    color: white;
+    background: none;
+}
+.nav-link.active {
+    background-color: orange;
+    color: rgb(10,10,40);
+    font-weight: 700;
+    border-radius: 5px;
+}
+.nav-link:hover {
+    background-color: rgb(15,76,129);
+    color: white;
+}
+
+/* About/profile image */
+.about-page img, .about-page video {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 18px;
+    border: 3px solid orange;
+    border-radius: 22px;
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    background: linear-gradient(90deg, rgb(10,10,40), rgb(15,76,129));
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    border-top: 3px solid orange;
+    padding: 40px 0 30px 0;
+    margin-top: 0;
+}
+footer a {
+    color: orange;
+    text-decoration: none;
+    margin: 0 11px;
+}
+footer a:hover {
+    color: rgb(255,215,0);
+}
+.social-media-links i {
+    margin: 0 11px;
+    color: white;
+}
+.social-media-links i:hover {
+    color: orange;
+}
+
+/* Misc content helpers */
+.bottom-links {
+  text-align: center;
+  margin-top: 40px;
+  padding-bottom: 100px;
+}
+.box {
+    height: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 22px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+    background-color: black;
+    border-radius: 50px;
+    font-size: 22px;
+    line-height: 70px;
+    color: white;
+    text-decoration: none;
+}
+.box:hover {
+  background-color: orange;
+  color: white;
 }

@@ -1,18 +1,35 @@
+<%# This brings in my site's header so all pages match %>
 <%- include('partials/header') %>
+
+<%# This pulls in the navigation menu at the top %>
 <%- include('partials/main_nav') %>
+
+<%# This is the main area that wraps everything on the homepage %>
 <div id="page-wrapper">
   <div class="container">
     <div class="row">
       <div class="col-md-12 homepage-content">
+
+        <%# Here’s my homepage title - the first thing people see! %>
         <h1 class="homepage-title">Welcome to Abdurrahman Jahankeers Assignment Tracker</h1>
+
+        <%# This line tells everyone what my website helps with %>
         <p>Track your major portfolio projects and assignments all in one place!</p>
+
+        <%# These boxes are big links to different parts of the website %>
         <div class="bottom-links" style="text-align: center;">
+
+          <%# This button lets you see all your assignments %>
           <div style="margin-bottom: 22px;">
             <a class="box" href="/assignments" style="padding-left: 30px; padding-right: 30px;">View Assignments</a>
           </div>
+
+          <%# This button takes you to the About page to learn more about me %>
           <div style="margin-bottom: 22px;">
             <a class="box" href="/about" style="padding-left: 90px; padding-right: 90px;">About</a>
           </div>
+
+          <%# This button lets you go to the Contact page if you want to message me %>
           <div>
             <a class="box" href="/contact" style="padding-left: 80px; padding-right: 80px;">Contact</a>
           </div>
@@ -21,4 +38,6 @@
     </div>
   </div>
 </div>
+
+<%# This puts my footer at the very bottom of the homepage %>
 <%- include('partials/footer') %>

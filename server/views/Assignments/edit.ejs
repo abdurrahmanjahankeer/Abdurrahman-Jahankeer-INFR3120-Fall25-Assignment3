@@ -1,47 +1,72 @@
+<%# This pulls in the site's main header %>
 <%- include('../partials/header') %>
+
+<%# This adds the main navigation menu at the top %>
 <%- include('../partials/main_nav') %>
 
+<%# This is the main area for editing your assignment %>
 <div id="page-wrapper">
     <div class="container">
-    <div class="row">
-        <div class="offset-md-3 col-md-6">
-        <h1><%= title || "Edit Assignment" %></h1>
-        <form class="form" method="post" action="/assignments/edit/<%= assignment._id %>">
-            <div class="form-group">
-            <label for="assignmentTitleField">Assignment Title</label>
-            <input type="text" class="form-control" id="assignmentTitleField"
-                    name="assignmentTitle" value="<%= assignment.assignmentTitle %>" required>
+        <div class="row">
+            <div class="offset-md-3 col-md-6">
+
+                <%# Here’s the heading for the page %>
+                <h1><%= title || "Edit Assignment" %></h1>
+
+                <%# This is the form for editing an assignment. When you submit, it updates the info %>
+                <form class="form" method="post" action="/assignments/edit/<%= assignment._id %>">
+
+                    <%# Edit the assignment's name here %>
+                    <div class="form-group">
+                        <label for="assignmentTitleField">Assignment Title</label>
+                        <input type="text" class="form-control" id="assignmentTitleField"
+                               name="assignmentTitle" value="<%= assignment.assignmentTitle %>" required>
+                    </div>
+
+                    <%# Change the class name (like Science, Math) here %>
+                    <div class="form-group">
+                        <label for="classField">Class</label>
+                        <input type="text" class="form-control" id="classField"
+                               name="class" value="<%= assignment.class %>" required>
+                    </div>
+
+                    <%# Update the explanation about the project here %>
+                    <div class="form-group">
+                        <label for="projectExplanationField">Project Explanation</label>
+                        <textarea class="form-control" id="projectExplanationField"
+                                  name="projectExplanation" rows="3" required><%= assignment.projectExplanation %></textarea>
+                    </div>
+
+                    <%# Change team members here (separate names with a comma) %>
+                    <div class="form-group">
+                        <label for="projectMembersField">Project Members (comma separated)</label>
+                        <input type="text" class="form-control" id="projectMembersField"
+                               name="projectMembers" value="<%= assignment.projectMembers.join(', ') %>" required>
+                    </div>
+
+                    <%# Fix or change the year the project was completed %>
+                    <div class="form-group">
+                        <label for="yearOfCompletionField">Year of Completion</label>
+                        <input type="number" class="form-control" id="yearOfCompletionField"
+                               name="yearOfCompletion" value="<%= assignment.yearOfCompletion %>" required>
+                    </div>
+                    <br>
+
+                    <%# This button saves your changes to the assignment %>
+                    <button class="btn btn-primary" type="submit">
+                        <i class="fas fa-edit"></i> Submit
+                    </button>
+
+                    <%# This button cancels and brings you back to the list %>
+                    <a href="/assignments" class="btn btn-warning">
+                        <i class="fas fa-undo"></i> Cancel
+                    </a>
+
+                </form>
             </div>
-            <div class="form-group">
-            <label for="classField">Class</label>
-            <input type="text" class="form-control" id="classField"
-                    name="class" value="<%= assignment.class %>" required>
-            </div>
-            <div class="form-group">
-            <label for="projectExplanationField">Project Explanation</label>
-            <textarea class="form-control" id="projectExplanationField"
-                        name="projectExplanation" rows="3" required><%= assignment.projectExplanation %></textarea>
-            </div>
-            <div class="form-group">
-            <label for="projectMembersField">Project Members (comma separated)</label>
-            <input type="text" class="form-control" id="projectMembersField"
-                    name="projectMembers" value="<%= assignment.projectMembers.join(', ') %>" required>
-            </div>
-            <div class="form-group">
-            <label for="yearOfCompletionField">Year of Completion</label>
-            <input type="number" class="form-control" id="yearOfCompletionField"
-                    name="yearOfCompletion" value="<%= assignment.yearOfCompletion %>" required>
-            </div>
-            <br>
-            <button class="btn btn-primary" type="submit">
-            <i class="fas fa-edit"></i> Submit
-            </button>
-            <a href="/assignments" class="btn btn-warning">
-            <i class="fas fa-undo"></i> Cancel
-            </a>
-        </form>
         </div>
     </div>
-    </div>
 </div>
+
+<%# This adds the footer at the bottom of the site %>
 <%- include('../partials/footer') %>

@@ -1,37 +1,50 @@
+<%# This brings in my page header so it looks nice everywhere %>
 <%- include('partials/header') %>
+
+<%# This adds my navigation menu at the top %>
 <%- include('partials/main_nav') %>
 
+<%# This is the main wrapper for my contact page %>
 <div id="page-wrapper">
     <div class="container contact-page mt-4">
-    <h2 class="page-title text-center text-white mb-4">Contact Me</h2>
-    
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-        <form action="mailto:abdurrahman.jahankeer@ontariotechu.net?subject=Contact Form from website" enctype="text/plain" method="post" name="ContactForm">
-            
-            <div class="mb-3">
-            <label for="FullName" class="form-label text-white">Full Name:</label>
-            <input type="text" class="form-control" name="FullName" id="FullName" placeholder="Please enter your full name" required>
-            </div>
 
-            <div class="mb-3">
-            <label for="Email" class="form-label text-white">Email:</label>
-            <input type="email" class="form-control" name="Email" id="Email" placeholder="Please enter your email address" required>
-            </div>
+        <%# This is the title to let everyone know this is the contact page %>
+        <h2 class="page-title text-center text-white mb-4">Contact Me</h2>
 
-            <div class="mb-3">
-            <label for="Message" class="form-label text-white">Message:</label>
-            <textarea class="form-control" name="Message" id="Message" rows="8" placeholder="Please enter your message here"></textarea>
-            </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
 
-            <div class="text-center button-container">
-            <button type="reset" class="contact-button">Reset</button>
-            <button type="submit" class="contact-button">Submit</button>
+                <%# Here’s the form where people can write to me! %>
+                <form action="mailto:abdurrahman.jahankeer@ontariotechu.net?subject=Contact Form from website" enctype="text/plain" method="post" name="ContactForm">
+                    
+                    <%# This is where you enter your full name %>
+                    <div class="mb-3">
+                        <label for="FullName" class="form-label text-white">Full Name:</label>
+                        <input type="text" class="form-control" name="FullName" id="FullName" placeholder="Please enter your full name" required>
+                    </div>
+
+                    <%# This is where you put your email address %>
+                    <div class="mb-3">
+                        <label for="Email" class="form-label text-white">Email:</label>
+                        <input type="email" class="form-control" name="Email" id="Email" placeholder="Please enter your email address" required>
+                    </div>
+
+                    <%# This is where you write your message to me %>
+                    <div class="mb-3">
+                        <label for="Message" class="form-label text-white">Message:</label>
+                        <textarea class="form-control" name="Message" id="Message" rows="8" placeholder="Please enter your message here"></textarea>
+                    </div>
+
+                    <%# These buttons let you reset the form or send your message %>
+                    <div class="text-center button-container">
+                        <button type="reset" class="contact-button">Reset</button>
+                        <button type="submit" class="contact-button">Submit</button>
+                    </div>
+                </form>
             </div>
-        </form>
         </div>
-    </div>
     </div>
 </div>
 
+<%# This adds my footer under the contact page %>
 <%- include('partials/footer') %>

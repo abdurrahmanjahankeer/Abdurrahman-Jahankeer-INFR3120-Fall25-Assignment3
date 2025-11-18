@@ -1,16 +1,24 @@
+<!-- This is my site's main navigation bar to let you move between pages -->
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#232425;">
   <div class="container-fluid">
+
+    <!-- This is my name and a link back to the homepage -->
     <a class="navbar-brand d-flex align-items-center fw-bold" href="/">
       Abdurrahman Jahankeer
     </a>
+
+    <!-- This button shows the menu when the screen is small (like on a phone) -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarNav" aria-controls="navbarNav"
             aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+
+    <!-- Here are my site's menu links to different pages -->
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
+          <%# This makes Home look highlighted if we are on the home page %>
           <% if(typeof title !== 'undefined' && title === "Home") { %>
             <a class="nav-link active" href="/"><i class="fas fa-home"></i> Home</a>
           <% } else { %>
@@ -18,6 +26,7 @@
           <% } %>
         </li>
         <li class="nav-item">
+          <%# This makes About look highlighted if we are on the about page %>
           <% if(typeof title !== 'undefined' && title === "About") { %>
             <a class="nav-link active" href="/about"><i class="fas fa-circle-info"></i> About</a>
           <% } else { %>
@@ -25,6 +34,7 @@
           <% } %>
         </li>
         <li class="nav-item">
+          <%# This makes Assignments look highlighted if we are on the assignments page %>
           <% if(typeof title !== 'undefined' && title === "Assignments" || title === "Assignments") { %>
             <a class="nav-link active" href="/assignments"><i class="fas fa-file-alt"></i> Assignments</a>
           <% } else { %>
@@ -32,6 +42,7 @@
           <% } %>
         </li>
         <li class="nav-item">
+          <%# This makes Contact look highlighted if we are on the contact page %>
           <% if(typeof title !== 'undefined' && title === "Contact") { %>
             <a class="nav-link active" href="/contact"><i class="fas fa-phone"></i> Contact</a>
           <% } else { %>

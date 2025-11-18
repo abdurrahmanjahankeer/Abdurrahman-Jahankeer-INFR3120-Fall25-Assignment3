@@ -1,10 +1,21 @@
+<%# This brings in my header at the top of the error page %>
 <%- include('partials/header') %>
+
+<%# This adds my site's main navigation menu %>
 <%- include('partials/main_nav') %>
 
+<%# This is the container that shows the error message %>
 <div class="container mt-5">
+
+    <%# This shows the main error message (what went wrong) %>
     <h1><%= message %></h1>
+
+    <%# This shows the error status number (like 404 or 500) %>
     <h2><%= error.status %></h2>
+    
+    <%# This prints out details about the error so I can fix it %>
     <pre><%= error.stack %></pre>
 </div>
 
+<%# This puts my website's footer under the error message %>
 <%- include('partials/footer') %>

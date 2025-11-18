@@ -1,13 +1,24 @@
+<%# This pulls in the site's header so every page matches %>
 <%- include('../partials/header') %>
+
+<%# This adds the navigation bar with menu links %>
 <%- include('../partials/main_nav') %>
+
+<%# This is where all the assignments will be shown in a table %>
 <div id="page-wrapper">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
+
+        <%# This is the title at the top of the page %>
         <h1 class="page-title"><%= title || "Assignments" %></h1>
+
+        <%# This button lets you add a new assignment to your list %>
         <a href="/assignments/add" class="btn btn-primary mb-3">
           <i class="fas fa-plus-circle"></i> Add Assignment
         </a>
+
+        <%# This table shows all of your assignments neatly %>
         <table class="table table-bordered table-striped table-hover">
           <tr>
             <th style="width:18%;">Assignment Title</th>
@@ -18,7 +29,9 @@
             <th style="width:7%;">Edit</th>
             <th style="width:7%;">Delete</th>
           </tr>
+          <%# Only show assignments if there are some in the list %>
           <% if(assignments && assignments.length > 0) { %>
+          <%# Go through every assignment and show them one at a time in the table %>
           <% for(let i=0; i < assignments.length; i++) { %>
             <tr>
               <td><%= assignments[i].assignmentTitle %></td>
@@ -27,17 +40,20 @@
               <td><%= assignments[i].projectMembers.join(', ') %></td>
               <td><%= assignments[i].yearOfCompletion %></td>
               <td>
+                <%# This button lets you edit a single assignment %>
                 <a href="/assignments/edit/<%= assignments[i]._id %>" class="btn btn-primary btn-sm">
                   <i class="fas fa-pencil-alt"></i>
                 </a>
               </td>
               <td>
+                <%# This button lets you delete a single assignment %>
                 <a href="/assignments/delete/<%= assignments[i]._id %>" class="btn btn-danger btn-sm">
                   <i class="fas fa-trash-alt"></i>
                 </a>
               </td>
             </tr>
           <% } %>
+          <%# If there are no assignments, show this friendly message instead %>
           <% } else { %>
             <tr>
               <td colspan="7" style="color: orange;">No assignments yet. Click "Add Assignment"!</td>
@@ -48,4 +64,6 @@
     </div>
   </div>
 </div>
+
+<%# This adds the footer at the bottom of the page %>
 <%- include('../partials/footer') %>

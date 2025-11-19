@@ -1,16 +1,26 @@
-/* Tablet View Stylesheet */
-body {
+/* This is the special stylesheet that makes my site look good on tablets */
+
+/* Make body font a bit bigger than on phones, but smaller than desktop */
+body{
     font-size: 16px;
 }
-.homepage-title, .page-title, h1, h2 {
+
+/* Make page titles and headings a little smaller so they fit on tablet screens */
+.homepage-title, .page-title, h1, h2{
     font-size: 32px;
 }
-.navbar-brand {
+
+/* The brand name at the top is a little smaller on tablets */
+.navbar-brand{
     font-size: 24px;
 }
-.table td, .table th {
+
+/* Make table cells and headers smaller so tables fit nicely */
+.table td, .table th{
     font-size: 16px;
 }
-.form-group label, .form-control {
+
+/* Make form labels and input boxes a bit smaller for tablets */
+.form-group label, .form-control{
     font-size: 16px;
 }

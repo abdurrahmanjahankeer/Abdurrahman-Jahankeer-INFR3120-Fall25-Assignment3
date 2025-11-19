@@ -1,16 +1,26 @@
-/* Full (Desktop) View Stylesheet */
-body {
+/* This is the special stylesheet that makes my site look best on desktop computers */
+
+/* Make body text bigger for easy reading on big screens */
+body{
     font-size: 18px;
 }
-.homepage-title, .page-title, h1, h2 {
+
+/* Make page titles and headings really big for desktop */
+.homepage-title, .page-title, h1, h2{
     font-size: 42px;
 }
-.navbar-brand {
+
+/* The brand name at the top of the navbar is extra big on desktop */
+.navbar-brand{
     font-size: 30px;
 }
-.table td, .table th {
+
+/* Make table cells and headers nice and big on desktop */
+.table td, .table th{
     font-size: 19px;
 }
-.form-group label, .form-control {
+
+/* Make form labels and input boxes big enough to easily fill on desktop */
+.form-group label, .form-control{
     font-size: 19px;
 }

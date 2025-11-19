@@ -1,7 +1,7 @@
-/* Main Stylesheet for Assignment Portfolio */
+/* This is the main stylesheet for my assignments website */
 
-/* Base background and body font */
-body {
+/* This styles the body, like the background, text color and font */
+body{
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
@@ -11,14 +11,14 @@ body {
     font-size: 18px;
 }
 
-/* Page wrapper leaves space for footer, keeps footer at bottom */
-#page-wrapper {
+/* This makes sure the bottom of the page leaves space for the footer */
+#page-wrapper{
     min-height: 600px;
     padding-bottom: 30px; 
 }
 
-/* Titles */
-.homepage-title, .page-title, h1, h2 {
+/* This sets how big and bold my page titles and main headings look */
+.homepage-title, .page-title, h1, h2{
     color: white;
     font-size: 36px;
     text-align: center;
@@ -27,12 +27,13 @@ body {
     font-weight: bold;
 }
 
-.homepage-content p {
+/* This centers the description on the homepage */
+.homepage-content p{
     text-align: center;
 }
 
-/* Buttons */
-.btn-primary {
+/* These rules style my main buttons, like Submit or Add Assignment */
+.btn-primary{
     background: linear-gradient(90deg, rgb(15,76,129) 60%, orange 100%);
     color: white;
     border: none;
@@ -40,11 +41,12 @@ body {
     padding: 10px 30px;
     border-radius: 12px;
 }
-.btn-primary:hover {
+.btn-primary:hover{
     background: orange;
     color: white;
 }
-.btn-warning {
+/* This styles warning buttons, like Cancel */
+.btn-warning{
     background-color: rgb(50,50,50);
     color: white;
     border: none;
@@ -52,7 +54,8 @@ body {
     padding: 8px 24px;
     font-size: 18px;
 }
-.btn-outline-info {
+/* This styles info/outlined buttons */
+.btn-outline-info{
     border: 2px solid rgb(15,76,129);
     color: rgb(15,76,129);
     background: transparent;
@@ -60,13 +63,13 @@ body {
     padding: 8px 22px;
     font-size: 16px;
 }
-.btn-outline-info:hover {
+.btn-outline-info:hover{
     background: rgb(15,76,129);
     color: white;
 }
 
-/* Assignments Table */
-.table {
+/* This makes my assignments table look nice and readable */
+.table{
     width: 100%;
     background: rgb(12,17,55);
     color: white;
@@ -77,25 +80,28 @@ body {
     font-size: 18px;
     border: 2px solid rgb(20,20,60);
 }
-.table th, .table td {
+/* This gives space in my table cells and adds borders */
+.table th, .table td{
     padding: 11px 7px;
     border: 2px solid rgb(20,20,60);
 }
-.table th {
+/* Table titles/headers use orange for easy reading */
+.table th{
     background: rgb(10,10,40);
     color: orange;
 }
-.table-hover tr:hover {
+/* This highlights a row when you move your mouse over it */
+.table-hover tr:hover{
     background-color: rgb(25,25,60);
 }
 
-/* Table columns for edit/delete actions */
-.table tr td:last-child, .table tr td:nth-last-child(2) {
+/* This changes background for columns with edit/delete buttons */
+.table tr td:last-child, .table tr td:nth-last-child(2){
     background: rgb(30,30,60);
 }
 
-/* Form input and group styles */
-.form-control {
+/* This makes all my form input fields look clean and easy to use */
+.form-control{
     background-color: white;
     color: rgb(10,10,40);
     border: 2px solid orange;
@@ -105,26 +111,29 @@ body {
     padding: 8px 15px;
     width: 100%;
 }
-.form-group label {
+/* Labels above form inputs are bigger and bold */
+.form-group label{
     color: rgb(190,190,200);
     font-size: 18px;
     margin-bottom: 8px;
     font-weight: 600;
 }
 
-/* Navbar */
-.navbar-brand {
+/* This styles my site's name at the top of the navigation bar */
+.navbar-brand{
     font-size: 26px;
     font-weight: bold;
     color: orange;
     letter-spacing: 1px;
 }
-.navbar {
+/* This makes my navigation bar look cool and modern */
+.navbar{
     background: linear-gradient(90deg, rgb(10,10,40) 60%, rgb(15,76,129) 100%);
     padding-left: 25px;
     padding-right: 25px;
 }
-.nav-link {
+/* Navigation links use white and are spaced out */
+.nav-link{
     font-size: 17px;
     margin: 0 7px;
     padding: 8px 18px;
@@ -132,19 +141,21 @@ body {
     color: white;
     background: none;
 }
-.nav-link.active {
+/* This makes the current page's link bright orange */
+.nav-link.active{
     background-color: orange;
     color: rgb(10,10,40);
     font-weight: 700;
     border-radius: 5px;
 }
-.nav-link:hover {
+/* Hovering over links turns them blue */
+.nav-link:hover{
     background-color: rgb(15,76,129);
     color: white;
 }
 
-/* About/profile image */
-.about-page img, .about-page video {
+/* This gives my about/profile images rounded borders and centers them */
+.about-page img, .about-page video{
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -153,8 +164,8 @@ body {
     border-radius: 22px;
 }
 
-/* Footer */
-footer {
+/* Footer styles keep the bottom of the page neat and organized */
+footer{
     width: 100%;
     background: linear-gradient(90deg, rgb(10,10,40), rgb(15,76,129));
     color: white;
@@ -164,29 +175,32 @@ footer {
     padding: 40px 0 30px 0;
     margin-top: 0;
 }
-footer a {
+/* Footer links are orange, and get brighter when hovered */
+footer a{
     color: orange;
     text-decoration: none;
     margin: 0 11px;
 }
-footer a:hover {
+footer a:hover{
     color: rgb(255,215,0);
 }
-.social-media-links i {
+/* Social media icons in the footer are spaced and turn orange if hovered */
+.social-media-links i{
     margin: 0 11px;
     color: white;
 }
-.social-media-links i:hover {
+.social-media-links i:hover{
     color: orange;
 }
 
-/* Organizing the Bottom links on Homepage */
-.bottom-links {
+/* This organizes the bottom links on my homepage */
+.bottom-links{
   text-align: center;
   margin-top: 40px;
   padding-bottom: 100px;
 }
-.box {
+/* These make the boxes for big homepage links tall and easy to click */
+.box{
     height: 70px;
     margin-left: auto;
     margin-right: auto;
@@ -201,13 +215,13 @@ footer a:hover {
     color: white;
     text-decoration: none;
 }
-.box:hover {
+.box:hover{
   background-color: orange;
   color: white;
 }
-/* Assignment Table: Make Edit and Delete buttons equal height and style */
-.edit-btn,
-.delete-btn {
+
+/* These styles make my Edit and Delete buttons the same height and shape */
+.edit-btn, .delete-btn{
     height: 43px;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -220,14 +234,17 @@ footer a:hover {
     color: white;
     border: none;
 }
-.delete-btn {
+/* Delete buttons get a red background to warn you */
+.delete-btn{
     background-color: rgb(229, 57, 53);
 }
-.edit-btn:hover {
+/* Editing buttons turn orange when hovered */
+.edit-btn:hover{
     background-color: rgb(255, 166, 0);
     color: white;
 }
-.delete-btn:hover {
+/* Deleting buttons turn orange when hovered */
+.delete-btn:hover{
     background-color: orange;
     color: white;
 }

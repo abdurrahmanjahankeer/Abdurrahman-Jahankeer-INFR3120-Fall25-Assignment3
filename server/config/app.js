@@ -14,6 +14,18 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+let session = require('express-session');
+let passport = require('passport');
+let passportLocal = require('passport-local');
+let localStrategy = passportLocal.Strategy;
+let flash = require('connect-flash');
+let cors = require('cors');
+let userModel = require('../model/user');
+let User = userModel.User;
+
+// The DB connection is handled by `server/config/db.js` through connectDB()
+// (we already call `connectDB()` above). No further action required here.
+
 // Import other files that organize the site by pages
 var indexRouter = require('../routes/index');
 var usersRouter = require('../routes/users');
@@ -21,6 +33,27 @@ var assignmentsRouter = require('../routes/assignments');
 
 // I made the website app using Express
 var app = express();
+
+// Set-up Express Session
+app.use(session({
+  secret: "Somesecret",
+  saveUninitialized: false,
+  resave: false
+}))
+
+// initialize flash
+app.use(flash());
+
+// user authentication
+passport.use(User.createStrategy());
+
+// serialize and deserialize the user information
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+// initialize the passport
+app.use(passport.initialize());
+app.use(passport.session());
 
 // I told Express where to find the HTML page templates
 app.set('views', path.join(__dirname, '../../server/views'));

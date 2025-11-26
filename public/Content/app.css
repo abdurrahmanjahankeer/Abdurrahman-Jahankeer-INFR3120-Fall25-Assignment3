@@ -248,3 +248,6 @@ footer a:hover{
     background-color: orange;
     color: white;
 }
+.table.assignments-table tr td {
+  background-color: white;
+}

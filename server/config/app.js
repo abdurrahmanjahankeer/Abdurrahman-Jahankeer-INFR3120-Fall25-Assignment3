@@ -18,6 +18,8 @@ let session = require('express-session');
 let passport = require('passport');
 let passportLocal = require('passport-local');
 let localStrategy = passportLocal.Strategy;
+let GoogleStrategy = require('passport-google-oauth20').Strategy;
+let GitHubStrategy = require('passport-github2').Strategy;
 let flash = require('connect-flash');
 let cors = require('cors');
 let userModel = require('../model/user');
@@ -50,6 +52,66 @@ passport.use(User.createStrategy());
 // serialize and deserialize the user information
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
+
+// Google OAuth
+passport.use(new GoogleStrategy({
+  clientID: process.env.GOOGLE_CLIENT_ID,
+  clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+  callbackURL: process.env.GOOGLE_CALLBACK_URL
+},
+async (accessToken, refreshToken, profile, done) => {
+  try {
+    let existingUser = await User.findOne({ googleId: profile.id });
+
+    if (!existingUser) {
+      const email = Array.isArray(profile.emails) && profile.emails.length > 0
+        ? profile.emails[0].value
+        : "";
+
+      existingUser = new User({
+        username: email || profile.id,
+        email: email,
+        displayName: profile.displayName || profile.username || "Google User",
+        googleId: profile.id
+      });
+      await existingUser.save();
+    }
+
+    return done(null, existingUser);
+  } catch (err) {
+    return done(err);
+  }
+}));
+
+// GitHub OAuth
+passport.use(new GitHubStrategy({
+  clientID: process.env.GITHUB_CLIENT_ID,
+  clientSecret: process.env.GITHUB_CLIENT_SECRET,
+  callbackURL: process.env.GITHUB_CALLBACK_URL
+},
+async (accessToken, refreshToken, profile, done) => {
+  try {
+    let existingUser = await User.findOne({ githubId: profile.id });
+
+    if (!existingUser) {
+      const email = Array.isArray(profile.emails) && profile.emails.length > 0
+        ? profile.emails[0].value
+        : "";
+
+      existingUser = new User({
+        username: profile.username || email || profile.id,
+        email: email,
+        displayName: profile.displayName || profile.username || "GitHub User",
+        githubId: profile.id
+      });
+      await existingUser.save();
+    }
+
+    return done(null, existingUser);
+  } catch (err) {
+    return done(err);
+  }
+}));
 
 // initialize the passport
 app.use(passport.initialize());

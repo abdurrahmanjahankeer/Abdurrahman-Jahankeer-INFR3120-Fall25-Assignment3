@@ -23,6 +23,18 @@ let User = new mongoose.Schema({
         trim:true,
         required:'displayName is required'
     },
+    googleId:
+    {
+        type: String,
+        default: "",
+        trim: true
+    },
+    githubId:
+    {
+        type: String,
+        default: "",
+        trim: true
+    },
     created:
     {
         type:Date,
